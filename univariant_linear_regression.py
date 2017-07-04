@@ -87,7 +87,7 @@ def simple_linear_regression(train, test):
     return predictions
 
 
-# Simple linear regression on insurance dataset
+# Simple linear regression on dataset
 seed(1)
 # evaluate algorithm
 split = 0.6
