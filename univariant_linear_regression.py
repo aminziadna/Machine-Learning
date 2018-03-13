@@ -7,14 +7,10 @@ cur.execute("select height,weight from Player")
 myData = cur.fetchall()
 cur.close()
 
-# Simple Linear Regression on the Swedish Insurance Dataset
 from random import seed
 from random import randrange
 from math import sqrt
 import matplotlib.pyplot as plt
-
-
-# Split a dataset into a train and test set
 def train_test_split(dataset, split):
     train = list()
     train_size = split * len(dataset)
@@ -23,9 +19,6 @@ def train_test_split(dataset, split):
         index = randrange(len(dataset_copy))
         train.append(dataset_copy.pop(index))
     return train, dataset_copy
-
-
-# Calculate root mean squared error
 def rmse_metric(actual, predicted):
     sum_error = 0.0
     for i in range(len(actual)):
@@ -48,8 +41,6 @@ def evaluate_algorithm(dataset, algorithm, split, *args):
     rmse = rmse_metric(actual, predicted)
     return rmse, actual, predicted, test
 
-
-# Calculate the mean value of a list of numbers
 def mean(values):
     return sum(values) / float(len(values))
 
